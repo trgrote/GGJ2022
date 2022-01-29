@@ -285,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _evpRate: 1
   _state: {fileID: 11400000, guid: 511fa7592993b5a4ba33a08812aa82ee, type: 2}
+  _toys: {fileID: 11400000, guid: 09ef1d7ae195f8c44be554476c522228, type: 2}
 --- !u!1 &1010981712
 GameObject:
   m_ObjectHideFlags: 0

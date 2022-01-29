@@ -11,6 +11,7 @@ public class BabyBrain : MonoBehaviour
     {
         _utilityFuncs.Add(new GoPottyUtility());
         _utilityFuncs.Add(new WanderUtility());
+        _utilityFuncs.Add(new PlayWithToyUtility());
 
         _state._potty = _state._boredom = 0f;
     }
@@ -39,16 +40,19 @@ public class BabyBrain : MonoBehaviour
 
     [SerializeField] float _evpRate = 1f;
     [SerializeField] BabyState _state;
+    [SerializeField] rho.RuntimeGameObjectSet _toys;
 
     IEnumerator Evaluate()
     {
         var context = new BabyContext
         {
-            state = _state
+            state = _state,
+            toys = _toys
         };
 
         while (true)
         {
+            context.position = transform;
             var result = GetNextAction(context);
             Debug.Log($"Baby needs to {result.Type}!");
             yield return new WaitForSeconds(_evpRate);
