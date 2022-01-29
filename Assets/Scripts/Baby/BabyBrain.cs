@@ -20,7 +20,6 @@ public class BabyBrain : MonoBehaviour
 
     void Start()
     {
-        // StartCoroutine(Evaluate());
         _agent = GetComponent<NavMeshAgent>();
     }
 
@@ -39,32 +38,19 @@ public class BabyBrain : MonoBehaviour
     [SerializeField] BabyState _state;
     [SerializeField] rho.RuntimeGameObjectSet _toys;
 
-    void Update()
+    [NaughtyAttributes.Button]
+    public void StartPolling()
     {
-        if (_state._currentAction == null)
-        {
-            // EvaluateForAction();
-        }
+        StopAllCoroutines();
+        StartCoroutine(PollAndExecuteActions());
     }
 
     [NaughtyAttributes.Button]
-    public void EvaluateForAction()
+    public void StopPolling()
     {
-        var context = new BabyContext
-        {
-            state = _state,
-            toys = _toys,
-            position = transform.position
-        };
-
-        var action = GetNextAction(context);
-        _state._currentAction = action;
-
         StopAllCoroutines();
-        StartCoroutine(_actionPeformance = PerformAction(action));
     }
 
-    IEnumerator _actionPeformance = null;
     NavMeshAgent _agent;
 
     IEnumerator WalkToPosition(Vector3 position)
@@ -97,6 +83,36 @@ public class BabyBrain : MonoBehaviour
             yield return WalkToPosition(playAction._toy.transform.position);
             yield return new WaitForSeconds(5f);    // play time
         }
+        else if (babyAction is Wander)
+        {
+            NavMeshHit navMeshHit;
+            bool foundPosition = NavMesh.SamplePosition(
+                transform.position + Random.insideUnitSphere * 20f,
+                out navMeshHit,
+                20f,
+                NavMesh.AllAreas
+            );
+
+            yield return WalkToPosition(navMeshHit.position);
+        }
         yield return null;
+    }
+
+    IEnumerator PollAndExecuteActions()
+    {
+        while (true)
+        {
+            var context = new BabyContext
+            {
+                state = _state,
+                toys = _toys,
+                position = transform.position
+            };
+
+            var action = GetNextAction(context);
+            _state._currentAction = action;
+
+            yield return PerformAction(action);
+        }
     }
 }
