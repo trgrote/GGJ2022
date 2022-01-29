@@ -85,6 +85,19 @@ public class BabyBrain : MonoBehaviour
         }
     }
 
+    float _prePottyTime = 2f;
+    [SerializeField] GameObject _poopPrefab;
+
+    IEnumerator GoPotty()
+    {
+        yield return new WaitForSeconds(_prePottyTime);
+        // TODO Spawn poop
+        var poop = Instantiate(_poopPrefab, transform.position, transform.rotation);
+
+        // Reduce potty to 0
+        _state._potty = 0f;
+    }
+
     IEnumerator PerformAction(IBabyAction babyAction)
     {
         Debug.Log($"Going to {babyAction.Type}");
@@ -105,6 +118,20 @@ public class BabyBrain : MonoBehaviour
             );
 
             yield return WalkToPosition(navMeshHit.position);
+        }
+        else if (babyAction is GoPotty)
+        {
+            NavMeshHit navMeshHit;
+            bool foundPosition = NavMesh.SamplePosition(
+                transform.position + Random.insideUnitSphere * 20f,
+                out navMeshHit,
+                20f,
+                NavMesh.AllAreas
+            );
+
+            yield return WalkToPosition(navMeshHit.position);
+            yield return GoPotty();
+
         }
         yield return null;
     }

@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: {fileID: 11400000, guid: 511fa7592993b5a4ba33a08812aa82ee, type: 2}
   _toys: {fileID: 11400000, guid: 09ef1d7ae195f8c44be554476c522228, type: 2}
+  _poopPrefab: {fileID: 8619804130417491364, guid: fa8118f82fb570047b6935a5241b24f5, type: 3}
