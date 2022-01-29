@@ -52,7 +52,7 @@ public class BabyBrain : MonoBehaviour
 
         while (true)
         {
-            context.position = transform;
+            context.position = transform.position;
             var result = GetNextAction(context);
             Debug.Log($"Baby needs to {result.Type}!");
             yield return new WaitForSeconds(_evpRate);

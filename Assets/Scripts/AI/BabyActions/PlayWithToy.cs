@@ -20,10 +20,10 @@ public class PlayWithToyUtility : IBabyActionUtility
     {
         var nearestToys = context.toys.Select(toy => {
             var distance = Mathf.Infinity;
-            if (NavMesh.CalculatePath(context.position.position, toy.transform.position, NavMesh.AllAreas, path) && path.status == NavMeshPathStatus.PathComplete)
+            if (NavMesh.CalculatePath(context.position, toy.transform.position, NavMesh.AllAreas, path) && path.status == NavMeshPathStatus.PathComplete)
             {
                 distance = 0f;
-                var previousPosition = context.position.position;
+                var previousPosition = context.position;
                 foreach(var corner in path.corners)
                 {
                     distance += Vector3.Distance(corner, previousPosition);

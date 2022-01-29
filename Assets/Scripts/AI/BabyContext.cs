@@ -4,5 +4,5 @@ public struct BabyContext
 {
     public BabyState state;
     public rho.RuntimeGameObjectSet toys;
-    public Transform position;
+    public Vector3 position;
 }
