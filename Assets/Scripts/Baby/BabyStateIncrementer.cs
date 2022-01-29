@@ -12,7 +12,14 @@ public class BabyStateIncrementer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _state._potty = Mathf.Min(_state._potty + _pottyRate * Time.deltaTime, BabyState.MAX);
-        _state._boredom = Mathf.Min(_state._boredom + _boredomRate * Time.deltaTime, BabyState.MAX);
+        if (_state._currentAction?.Type != BabyActionType.GO_POTTY)
+        {
+            _state._potty = Mathf.Min(_state._potty + _pottyRate * Time.deltaTime, BabyState.MAX);
+        }        
+
+        if (_state._currentAction?.Type != BabyActionType.PLAY)
+        {
+            _state._boredom = Mathf.Min(_state._boredom + _boredomRate * Time.deltaTime, BabyState.MAX);
+        }
     }
 }

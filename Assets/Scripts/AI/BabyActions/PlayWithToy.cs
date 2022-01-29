@@ -46,7 +46,7 @@ public class PlayWithToyUtility : IBabyActionUtility
 
         return new BabyActionUtilityResult
         {
-            Score = nearestToy == null ? 0f : 1f,
+            Score = nearestToy == null ? 0f : context.state._boredom * 1f,
             Action = new PlayWithToy{ _toy = nearestToy?.toy}
         };
     }

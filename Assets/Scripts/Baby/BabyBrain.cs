@@ -74,6 +74,17 @@ public class BabyBrain : MonoBehaviour
         }
     }
 
+    float _boredomReductionRate = -0.1f;
+
+    IEnumerator ReduceBoredom()
+    {
+        while (_state._boredom > 0)
+        {
+            _state._boredom += _boredomReductionRate * Time.deltaTime;
+            yield return null;
+        }
+    }
+
     IEnumerator PerformAction(IBabyAction babyAction)
     {
         Debug.Log($"Going to {babyAction.Type}");
@@ -81,7 +92,7 @@ public class BabyBrain : MonoBehaviour
         {
             var playAction = babyAction as PlayWithToy;
             yield return WalkToPosition(playAction._toy.transform.position);
-            yield return new WaitForSeconds(5f);    // play time
+            yield return ReduceBoredom();    // play time
         }
         else if (babyAction is Wander)
         {
@@ -102,14 +113,12 @@ public class BabyBrain : MonoBehaviour
     {
         while (true)
         {
-            var context = new BabyContext
+            var action = GetNextAction(new BabyContext
             {
                 state = _state,
                 toys = _toys,
                 position = transform.position
-            };
-
-            var action = GetNextAction(context);
+            });
             _state._currentAction = action;
 
             yield return PerformAction(action);
