@@ -39,7 +39,7 @@ public class PlayWithToyUtility : IBabyActionUtility
 
         foreach (var result in nearestToys)
         {
-            Debug.Log($"{result.distance} => {result.toy.name}");
+            // Debug.Log($"{result.distance} => {result.toy.name}");
         }
 
         var nearestToy = nearestToys.FirstOrDefault(result => result.distance < minToyDistance);
