@@ -16,14 +16,9 @@ public class BabyBrain : MonoBehaviour
         _state._potty = _state._boredom = 0f;
     }
 
-    void OnEnable()
+    void Start()
     {
         StartCoroutine(Evaluate());
-    }
-
-    void OnDisable()
-    {
-        StopAllCoroutines();
     }
 
     IBabyAction GetNextAction(BabyContext context)
