@@ -21,6 +21,9 @@ public class BabyBrain : MonoBehaviour
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+
+        // TOOD Takeout so the state manager can handle it instead
+        StartPolling();
     }
 
     IBabyAction GetNextAction(BabyContext context)
