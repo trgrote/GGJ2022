@@ -9,15 +9,14 @@ public class GoPotty : IBabyAction
 
 public class GoPottyUtility : IBabyActionUtility
 {
-    const float MinThreshold = 50f;   // under this threshold, babay will never poop
-    const float MaxPoopValue = 100f;   // under this threshold, babay will never poop
-
+    const float MinThreshold = BabyState.MAX / 2f;   // under this threshold, babay will never poop
+    
     public BabyActionUtilityResult GetScore(BabyContext context)
     {
         return new BabyActionUtilityResult
         {
             Score = context.state._potty > MinThreshold ? 
-                (context.state._potty - MinThreshold) / (MaxPoopValue - MinThreshold) : 
+                (context.state._potty - MinThreshold) / (BabyState.MAX - MinThreshold) : 
                 0f,
             Action = new GoPotty()
         };
