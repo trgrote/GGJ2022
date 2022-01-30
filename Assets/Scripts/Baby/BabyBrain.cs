@@ -58,7 +58,8 @@ public class BabyBrain : MonoBehaviour
     public void StopPolling()
     {
         StopAllCoroutines();
-        _agent.isStopped = true;
+        if (_agent.isOnNavMesh)
+            _agent.isStopped = true;
     }
 
     NavMeshAgent _agent;

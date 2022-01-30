@@ -3584,7 +3584,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552599011}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3924,6 +3924,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23c875857accc4f3f9094e344fd2f125, type: 3}
+--- !u!1 &1715256077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 24886001446560599, guid: e38b657271c31a54e823dd9ec008a275, type: 3}
+  m_PrefabInstance: {fileID: 1899975883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1715256081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715256077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac76703abb1f65458dcb740cc1d38b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _runtimeSet: {fileID: 11400000, guid: 07d189c699a80d141a2067f23840f50c, type: 2}
 --- !u!1 &1722116798
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,6 +4453,10 @@ PrefabInstance:
     - target: {fileID: 1592533467430559104, guid: e38b657271c31a54e823dd9ec008a275, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592533467430559164, guid: e38b657271c31a54e823dd9ec008a275, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1592533467430559167, guid: e38b657271c31a54e823dd9ec008a275, type: 3}
       propertyPath: m_Name

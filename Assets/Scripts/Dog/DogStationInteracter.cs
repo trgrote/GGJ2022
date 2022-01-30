@@ -7,13 +7,20 @@ using UnityEngine.InputSystem;
 public class DogStationInteracter : MonoBehaviour
 {
     [SerializeField] rho.RuntimeGameObjectSet _stations;
+    [SerializeField] rho.RuntimeGameObjectSet _pickups;
     List<GameObject> _usableStations = new List<GameObject>();
 
     [SerializeField] GameObject _interactText;
+    [SerializeField] DogState _state;
+
+    [SerializeField] Transform _holdPosition;
+    [SerializeField] Transform _dropPosition;
+    Transform _heldObject;
 
     void Start()
     {
-        _interactText.SetActive(false); 
+        _interactText.SetActive(false);
+        _state._mode = DogStateMode.WALKING;
     }
 
     // Update is called once per frame
@@ -40,9 +47,45 @@ public class DogStationInteracter : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!context.performed)
         {
-            Debug.Log("Performed");
+            return;
+        }
+
+        switch (_state._mode)
+        {
+            case DogStateMode.WALKING:
+            {
+                if (_usableStations.Count() > 0)
+                {
+                    var mostRecentAddition = _usableStations.Last();
+
+                    if (mostRecentAddition != null)
+                    {
+                        if (_pickups.Contains(mostRecentAddition))
+                        {
+                            _heldObject = mostRecentAddition.transform.parent;
+                            _heldObject.SendMessage("Pickup");
+
+                            _heldObject.parent = _holdPosition;
+                            _heldObject.localRotation = Quaternion.identity;
+                            _heldObject.localPosition = Vector3.zero;
+                            // Pickup object
+                            _state._mode = DogStateMode.HOLDING;
+                        }
+                    }
+                }
+                break;
+            }
+            case DogStateMode.HOLDING:
+            {
+                _heldObject.parent = null;
+                _heldObject.position = _dropPosition.position;
+                _heldObject.SendMessage("Drop");
+                // Pickup object
+                _state._mode = DogStateMode.WALKING;
+                break;
+            } 
         }
     }
 }
