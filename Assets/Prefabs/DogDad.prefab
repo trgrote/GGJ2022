@@ -309,6 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 502174217030674657}
+  - component: {fileID: 2739713577924226928}
   m_Layer: 0
   m_Name: Arms
   m_TagString: Untagged
@@ -331,6 +332,21 @@ Transform:
   m_Father: {fileID: 502174216556615041}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 88.48, y: 0, z: 0}
+--- !u!114 &2739713577924226928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987348688773411419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0912cff5e10afbb46b452277756794a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _state: {fileID: 11400000, guid: 728a64f90a56d7045996d49c66d1a92e, type: 2}
+  _downRotation: 90
+  _upRotation: 270
 --- !u!1 &7038918654588099843
 GameObject:
   m_ObjectHideFlags: 0

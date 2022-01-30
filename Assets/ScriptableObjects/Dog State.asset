@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1167613092df446b099df5f0885ea1, type: 3}
   m_Name: Dog State
   m_EditorClassIdentifier: 
+  _currentMovement: {x: 0, y: 0, z: 0}
+  _badBadMeter: 0
+  _workMeter: 0
+  _mode: 0
