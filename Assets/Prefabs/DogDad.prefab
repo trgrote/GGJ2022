@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8846431466733718481}
   - component: {fileID: 1089233698174389889}
   - component: {fileID: 6178104819359747644}
+  - component: {fileID: 585154149769917046}
   m_Layer: 0
   m_Name: InteractionText
   m_TagString: Untagged
@@ -81,7 +82,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612194455050557788}
-  m_Text: Hold E
+  m_Text: Press E
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -95,6 +96,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278574336
+--- !u!114 &585154149769917046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612194455050557788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5f3898bc60bb44da67699bb4d356d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _state: {fileID: 11400000, guid: 728a64f90a56d7045996d49c66d1a92e, type: 2}
 --- !u!1 &987348688030912315
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stations: {fileID: 11400000, guid: 07d189c699a80d141a2067f23840f50c, type: 2}
+  _interactText: {fileID: 612194455050557788}
 --- !u!1 &987348688773411419
 GameObject:
   m_ObjectHideFlags: 0
