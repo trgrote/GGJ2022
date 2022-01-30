@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DogStationInteracter : MonoBehaviour
 {
@@ -35,5 +36,13 @@ public class DogStationInteracter : MonoBehaviour
                 _interactText.SetActive(false);                
             }
         }        
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Performed");
+        }
     }
 }

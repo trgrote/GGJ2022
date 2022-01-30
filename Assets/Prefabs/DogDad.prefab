@@ -222,14 +222,6 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: b0b4ab57-861f-4417-9a4e-3a75254e2283
-    m_ActionName: Player/Look[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 54df88c1-a0ff-43e9-8f32-bef222d0dc7e
-    m_ActionName: Player/Fire[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 39e9dd11-d08c-4d08-ba37-269f3d7cf5a9
     m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -268,6 +260,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 71833475-6703-41b4-8440-4285b88bb00d
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2790685286451780078}
+        m_TargetAssemblyTypeName: DogStationInteracter, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5e943505-030e-42cc-9240-e05724ebd60d
+    m_ActionName: Player/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -300,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stations: {fileID: 11400000, guid: 07d189c699a80d141a2067f23840f50c, type: 2}
   _interactText: {fileID: 612194455050557788}
+  _state: {fileID: 0}
 --- !u!1 &987348688773411419
 GameObject:
   m_ObjectHideFlags: 0
