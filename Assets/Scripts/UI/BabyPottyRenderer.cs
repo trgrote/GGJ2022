@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BabyPottyRenderer : MonoBehaviour
 {
   [SerializeField] BabyState _state;
-  Text _text;
+  [SerializeField] Text _text;
   void Start()
   {
     _text = GetComponent<Text>();

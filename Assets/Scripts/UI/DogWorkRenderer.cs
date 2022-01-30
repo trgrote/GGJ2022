@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DogWorkRenderer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  [SerializeField] DogState _state;
+  [SerializeField] Text _text;
+  void Start()
+  {
+    _text = GetComponent<Text>();
+  }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  void Update()
+  {
+    _text.text = $"Work = {_state._workMeter}";
+  }
 }

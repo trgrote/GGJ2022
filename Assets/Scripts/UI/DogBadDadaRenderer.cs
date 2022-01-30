@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DogBadDadaRenderer : MonoBehaviour
 {
-  [SerializeField] DogState _state;
-  Text _text;
+  [SerializeField] DogState _state; 
+  [SerializeField] Text _text;
   void Start()
   {
     _text = GetComponent<Text>();
@@ -13,6 +14,6 @@ public class DogBadDadaRenderer : MonoBehaviour
 
   void Update()
   {
-    _text.text = $"Potty = {_state._badBadMeter}";
+    _text.text = $"BadDad = {_state._badBadMeter}";
   }
 }

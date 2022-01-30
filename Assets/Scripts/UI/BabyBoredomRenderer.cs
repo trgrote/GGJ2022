@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BabyBoredomRenderer : MonoBehaviour
 {
-  [SerializeField] BabyState _state;
-  Text _text;
+  [SerializeField] BabyState _state; 
+  [SerializeField] Text _text;
   void Start()
   {
     _text = GetComponent<Text>();
@@ -14,6 +14,6 @@ public class BabyBoredomRenderer : MonoBehaviour
 
   void Update()
   {
-    _text.text = $"Potty = {_state._boredom}";
+    _text.text = $"Boredom = {_state._boredom}";
   }
 }
