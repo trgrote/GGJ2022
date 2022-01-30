@@ -95,7 +95,7 @@ public class BabyBrain : MonoBehaviour
     {
         yield return new WaitForSeconds(_prePottyTime);
         // TODO Spawn poop
-        var poop = Instantiate(_poopPrefab, transform.position, transform.rotation);
+        var poop = Instantiate(_poopPrefab, transform.position + new Vector3(0, 2f, 0f), transform.rotation);
 
         // Reduce potty to 0
         _state._potty = 0f;
