@@ -13,13 +13,14 @@ public class BabyModeManager : MonoBehaviour
         _state._mode = BabyStateMode.ON_GROUND;
     }
 
-    // Update is called once per frame
+    [NaughtyAttributes.Button]
     public void Pickup()
     {
         _state._mode = BabyStateMode.HELD;
         _groundBehaviors.ForEach(b => b.enabled = false);
     }
 
+    [NaughtyAttributes.Button]
     public void Drop()
     {
         _state._mode = BabyStateMode.ON_GROUND;
