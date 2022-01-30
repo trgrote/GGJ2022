@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f4bf7533eb48a43a27b7ae7b2fd0f9, type: 3}
   m_Name: Baby State
   m_EditorClassIdentifier: 
-  _potty: 79.28832
-  _boredom: 100
+  _potty: 0.8779089
+  _boredom: 0.13357492
+  _mode: 0

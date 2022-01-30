@@ -1,5 +1,11 @@
 using UnityEngine;
 
+public enum BabyStateMode
+{
+    ON_GROUND,
+    HELD
+}
+
 [CreateAssetMenu(menuName = "GGJ2022/Baby State")]
 public class BabyState : ScriptableObject
 {
@@ -7,4 +13,5 @@ public class BabyState : ScriptableObject
     public float _potty;
     public float _boredom;
     public IBabyAction _currentAction;
+    public BabyStateMode _mode = BabyStateMode.ON_GROUND;
 }

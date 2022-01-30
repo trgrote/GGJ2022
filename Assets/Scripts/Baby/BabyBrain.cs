@@ -16,14 +16,19 @@ public class BabyBrain : MonoBehaviour
         _utilityFuncs.Add(new PlayWithToyUtility());
 
         _state._potty = _state._boredom = 0f;
+
+        _agent = GetComponent<NavMeshAgent>();
     }
 
-    void Start()
+    void OnEnable()
     {
-        _agent = GetComponent<NavMeshAgent>();
-
-        // TOOD Takeout so the state manager can handle it instead
         StartPolling();
+    }
+
+    void OnDisable()
+    {
+        Debug.Log("Disable");
+        StopPolling();
     }
 
     IBabyAction GetNextAction(BabyContext context)
@@ -45,6 +50,7 @@ public class BabyBrain : MonoBehaviour
     public void StartPolling()
     {
         StopAllCoroutines();
+        _agent.isStopped = false;
         StartCoroutine(PollAndExecuteActions());
     }
 
@@ -52,6 +58,7 @@ public class BabyBrain : MonoBehaviour
     public void StopPolling()
     {
         StopAllCoroutines();
+        _agent.isStopped = true;
     }
 
     NavMeshAgent _agent;
@@ -141,6 +148,7 @@ public class BabyBrain : MonoBehaviour
 
     IEnumerator PollAndExecuteActions()
     {
+        yield return null;
         while (true)
         {
             var action = GetNextAction(new BabyContext
