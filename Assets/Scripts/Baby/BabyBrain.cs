@@ -27,7 +27,6 @@ public class BabyBrain : MonoBehaviour
 
     void OnDisable()
     {
-        Debug.Log("Disable");
         StopPolling();
     }
 
@@ -111,7 +110,6 @@ public class BabyBrain : MonoBehaviour
 
     IEnumerator PerformAction(IBabyAction babyAction)
     {
-        Debug.Log($"Going to {babyAction.Type}");
         if (babyAction is PlayWithToy)
         {
             var playAction = babyAction as PlayWithToy;
