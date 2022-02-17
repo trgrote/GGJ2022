@@ -16,3 +16,4 @@ MonoBehaviour:
   _badBadMeter: 0
   _workMeter: 0
   _mode: 0
+  _workMultiplier: 1
