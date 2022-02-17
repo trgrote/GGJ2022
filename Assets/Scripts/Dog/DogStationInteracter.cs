@@ -73,19 +73,31 @@ public class DogStationInteracter : MonoBehaviour
                             // Pickup object
                             _state._mode = DogStateMode.HOLDING;
                         }
+                        else if (_stations.Contains(mostRecentAddition))
+                        {
+                            // TODO Start Operating on Station
+                            _state._mode = DogStateMode.WORKING;
+                            SendMessage("StartWorking");
+                        }
                     }
                 }
                 break;
             }
             case DogStateMode.HOLDING:
             {
+                // Drop Object
                 _heldObject.parent = null;
                 _heldObject.position = _dropPosition.position;
                 _heldObject.SendMessage("Drop");
-                // Pickup object
                 _state._mode = DogStateMode.WALKING;
                 break;
-            } 
+            }
+            case DogStateMode.WORKING:
+            {
+                _state._mode = DogStateMode.WALKING;
+                SendMessage("StopWorking");
+                break;
+            }
         }
     }
 }

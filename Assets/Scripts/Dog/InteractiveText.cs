@@ -20,7 +20,7 @@ public class InteractiveText : MonoBehaviour
                 _text.text = "Press E";
                 break;
             case DogStateMode.WORKING:
-                _text.text = "Working...";
+                _text.text = $"Working... (x{_state._workMultiplier})";
                 break;
             case DogStateMode.HOLDING:
                 _text.text = "Press E to Drop";

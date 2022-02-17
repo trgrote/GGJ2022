@@ -16,4 +16,6 @@ public class DogState : ScriptableObject
     public float _workMeter = 0f;   // 0 -> 1f
 
     public DogStateMode _mode = DogStateMode.WALKING;
+    
+    public int _workMultiplier = 1;
 }

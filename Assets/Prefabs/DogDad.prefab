@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 7211790960242553158}
   - component: {fileID: 8122099428521427863}
   - component: {fileID: 2790685286451780078}
+  - component: {fileID: 2007903955061925246}
   m_Layer: 0
   m_Name: DogDad
   m_TagString: Untagged
@@ -314,6 +315,19 @@ MonoBehaviour:
   _state: {fileID: 11400000, guid: 728a64f90a56d7045996d49c66d1a92e, type: 2}
   _holdPosition: {fileID: 5991264538992270654}
   _dropPosition: {fileID: 5815396925297567999}
+--- !u!114 &2007903955061925246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987348688030912315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df5a0838bd6b8944af05077464b3473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _state: {fileID: 11400000, guid: 728a64f90a56d7045996d49c66d1a92e, type: 2}
 --- !u!1 &987348688773411419
 GameObject:
   m_ObjectHideFlags: 0

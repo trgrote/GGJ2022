@@ -19,6 +19,8 @@ public class DogInputHandler : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (_state._mode == DogStateMode.WORKING) return;
+        
         var direction = context.ReadValue<Vector2>();
         if (direction.sqrMagnitude > 0)
         {
