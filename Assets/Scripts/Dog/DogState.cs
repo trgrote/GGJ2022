@@ -18,4 +18,5 @@ public class DogState : ScriptableObject
     public DogStateMode _mode = DogStateMode.WALKING;
     
     public int _workMultiplier = 1;
+    public bool _isInside;
 }

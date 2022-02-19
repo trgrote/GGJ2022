@@ -14,4 +14,5 @@ public class BabyState : ScriptableObject
     public float _boredom;
     public IBabyAction _currentAction;
     public BabyStateMode _mode = BabyStateMode.ON_GROUND;
+    public bool _isInside;
 }

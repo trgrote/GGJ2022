@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 1592533467430559111}
   - component: {fileID: 7397818298364258848}
   - component: {fileID: 1101869513004471594}
+  - component: {fileID: 6177498278793272443}
   m_Layer: 0
   m_Name: Baby
   m_TagString: Untagged
@@ -189,6 +190,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poopPrefab: {fileID: 8619804130417491364, guid: fa8118f82fb570047b6935a5241b24f5, type: 3}
   _poopEvent: {fileID: 11400000, guid: bf4f8f06b34b8c1439bb86ebecd8d777, type: 2}
+--- !u!114 &6177498278793272443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592533467430559167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca9ace144795db47bf8253f72874a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _insideTriggers: {fileID: 11400000, guid: 660d12b7213b6a94488e258cae2d2100, type: 2}
+  _babyState: {fileID: 11400000, guid: 511fa7592993b5a4ba33a08812aa82ee, type: 2}
 --- !u!1 &6785721848488166426
 GameObject:
   m_ObjectHideFlags: 0

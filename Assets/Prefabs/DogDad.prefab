@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 8122099428521427863}
   - component: {fileID: 2790685286451780078}
   - component: {fileID: 2007903955061925246}
+  - component: {fileID: 3383073415326033563}
   m_Layer: 0
   m_Name: DogDad
   m_TagString: Untagged
@@ -328,6 +329,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: {fileID: 11400000, guid: 728a64f90a56d7045996d49c66d1a92e, type: 2}
+--- !u!114 &3383073415326033563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987348688030912315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb5be44abbdcbb6449b4f93cf5c9419a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _insideTriggers: {fileID: 11400000, guid: 660d12b7213b6a94488e258cae2d2100, type: 2}
+  _dogState: {fileID: 11400000, guid: 728a64f90a56d7045996d49c66d1a92e, type: 2}
 --- !u!1 &987348688773411419
 GameObject:
   m_ObjectHideFlags: 0
