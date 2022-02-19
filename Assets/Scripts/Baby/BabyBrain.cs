@@ -96,16 +96,12 @@ public class BabyBrain : MonoBehaviour
     }
 
     float _prePottyTime = 2f;
-    [SerializeField] GameObject _poopPrefab;
 
     IEnumerator GoPotty()
     {
         yield return new WaitForSeconds(_prePottyTime);
-        // TODO Spawn poop
-        var poop = Instantiate(_poopPrefab, transform.position + new Vector3(0, 2f, 0f), transform.rotation);
-
-        // Reduce potty to 0
-        _state._potty = 0f;
+        SendMessage("Poop");
+        _state._potty = 0f;     // Reduce potty to 0
     }
 
     IEnumerator PerformAction(IBabyAction babyAction)
