@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: c9bd41be6c538994cb38ebfd3a2f20c9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _dogState: {fileID: 11400000, guid: 728a64f90a56d7045996d49c66d1a92e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
