@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 7397818298364258848}
   - component: {fileID: 1101869513004471594}
   - component: {fileID: 6177498278793272443}
+  - component: {fileID: 6982967822078065572}
   m_Layer: 0
   m_Name: Baby
   m_TagString: Untagged
@@ -204,6 +205,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _insideTriggers: {fileID: 11400000, guid: 660d12b7213b6a94488e258cae2d2100, type: 2}
   _babyState: {fileID: 11400000, guid: 511fa7592993b5a4ba33a08812aa82ee, type: 2}
+--- !u!54 &6982967822078065572
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592533467430559167}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6785721848488166426
 GameObject:
   m_ObjectHideFlags: 0
