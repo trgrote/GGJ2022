@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - _dogState: {fileID: 11400000, guid: 728a64f90a56d7045996d49c66d1a92e, type: 2}
+  - _babyState: {fileID: 11400000, guid: 511fa7592993b5a4ba33a08812aa82ee, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
