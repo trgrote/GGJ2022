@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poopPrefab: {fileID: 8619804130417491364, guid: fa8118f82fb570047b6935a5241b24f5, type: 3}
+  _poopEvent: {fileID: 11400000, guid: bf4f8f06b34b8c1439bb86ebecd8d777, type: 2}
 --- !u!1 &6785721848488166426
 GameObject:
   m_ObjectHideFlags: 0
