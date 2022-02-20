@@ -6,5 +6,5 @@ public class BabyInsideHandler : InsideTriggerHandler
 {
     [SerializeField] BabyState _babyState;
 
-    public override void SetInside(bool isInside) => _babyState._isInside = isInside;
+    public override void SetInside(bool isInside) => _babyState.isInside = isInside;
 }

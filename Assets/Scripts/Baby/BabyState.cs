@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum BabyStateMode
@@ -14,5 +15,15 @@ public class BabyState : ScriptableObject
     public float _boredom;
     public IBabyAction _currentAction;
     public BabyStateMode _mode = BabyStateMode.ON_GROUND;
-    public bool _isInside;
+    protected bool _isInside;
+    public event Action OnIsInsideChanged;
+    public bool isInside
+    {
+        get => _isInside;
+        set
+        {
+            _isInside = value;
+            OnIsInsideChanged?.Invoke();
+        }
+    }
 }

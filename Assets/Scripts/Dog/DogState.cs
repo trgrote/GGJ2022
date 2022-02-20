@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum DogStateMode
@@ -18,5 +19,15 @@ public class DogState : ScriptableObject
     public DogStateMode _mode = DogStateMode.WALKING;
     
     public int _workMultiplier = 1;
-    public bool _isInside;
+    protected bool _isInside;
+    public event Action OnIsInsideChanged;
+    public bool isInside
+    {
+        get => _isInside;
+        set
+        {
+            _isInside = value;
+            OnIsInsideChanged?.Invoke();
+        }
+    }
 }
