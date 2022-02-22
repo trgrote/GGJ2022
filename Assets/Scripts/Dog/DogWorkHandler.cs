@@ -9,6 +9,12 @@ public class DogWorkHandler : MonoBehaviour
     float _workRate = 0.001f;
     float _workRateInterval = 3f;
 
+    void OnEnable()
+    {
+        _state._workMeter = 0;
+        _state._workMultiplier = 0;
+    }
+
     IEnumerator Work()
     {
         _state._workMultiplier = 1;
