@@ -11,6 +11,8 @@ public class BadDadListener : MonoBehaviour
 
     void OnEnable()
     {
+        _dogState._badBadMeter = 0;
+        
         _dogState.OnIsInsideChanged += OnInsideStateChanged;
         _babyState.OnIsInsideChanged += OnInsideStateChanged;
     }
