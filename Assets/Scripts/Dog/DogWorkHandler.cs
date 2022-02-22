@@ -6,7 +6,7 @@ public class DogWorkHandler : MonoBehaviour
 {
     [SerializeField] DogState _state;
 
-    float _workRate = 0.001f;
+    float _workRate = 0.01f;
     float _workRateInterval = 3f;
 
     void OnEnable()
