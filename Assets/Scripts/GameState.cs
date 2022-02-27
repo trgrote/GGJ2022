@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum eGameState
 {
+    TITLE,
     GAMEMODE
 }
 
