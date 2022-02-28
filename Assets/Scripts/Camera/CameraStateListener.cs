@@ -1,23 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
+using rho;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class CameraStateListener : MonoBehaviour
 {
     [SerializeField] GameState _state;
+    Animator _anim;
 
     void OnEnabled()
     {
-        _state.OnStateChanged += OnStateChanged;
+        _state.Changed += OnStateChanged;
+    }
+
+    void Awake()
+    {
+        _anim = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        switch (_state.Value)
+        {
+            case eGameState.TITLE:
+                _anim.SetTrigger("ToTitle");
+                break;
+            case eGameState.GAMEMODE:
+                _anim.SetTrigger("ToGamemode");
+                break;
+            default:
+                break;
+        }
     }
 
     void OnDisabled()
     {
-        _state.OnStateChanged -= OnStateChanged;
+        _state.Changed -= OnStateChanged;
     }
 
-    void OnStateChanged(eGameState newState)
+    void OnStateChanged(ExternalVariable<eGameState> sender, eGameState oldValue, eGameState newValue)
     {
-        // TODO Add state transition trigger calls
+        switch (newValue)
+        {
+            case eGameState.TITLE:
+                _anim.SetTrigger("ToTitle");
+                break;
+            case eGameState.GAMEMODE:
+                _anim.SetTrigger("ToGamemode");
+                break;
+            default:
+                break;
+        }
     }
 }

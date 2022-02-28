@@ -10,19 +10,6 @@ public enum eGameState
 }
 
 [CreateAssetMenu(menuName = "GGJ2022/Game State")]
-public class GameState : ScriptableObject
+public class GameState : rho.ExternalVariable<eGameState>
 {
-    protected eGameState _state;
-
-    public event Action<eGameState> OnStateChanged;
-
-    public eGameState State
-    {
-        get => _state;
-        set
-        {
-            _state = value;
-            OnStateChanged?.Invoke(_state);
-        }
-    }
 }
