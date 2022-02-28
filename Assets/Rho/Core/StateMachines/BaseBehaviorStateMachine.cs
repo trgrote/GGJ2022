@@ -18,7 +18,6 @@ namespace rho
 	 * 6. Play!
 	 */
 	public class BaseBehaviorStateMachine<T> : MonoBehaviour
-		where T : IEquatable<T>
 	{
 		[Serializable]
 		protected class StateInfo

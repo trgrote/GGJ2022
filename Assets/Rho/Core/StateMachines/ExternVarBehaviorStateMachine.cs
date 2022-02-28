@@ -4,7 +4,6 @@ using UnityEngine;
 namespace rho
 {
 	public class ExternVarBehaviorStateMachine<T> : BaseBehaviorStateMachine<T>
-		where T : IEquatable<T>
 	{
 		[SerializeField] protected ExternalVariable<T> _externState;
 
