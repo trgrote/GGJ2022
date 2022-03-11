@@ -14,6 +14,6 @@ public class BabyBoredomRenderer : MonoBehaviour
 
   void Update()
   {
-    _text.text = $"Boredom = {_state._boredom}";
+    _text.text = "Boredom = " + _state._boredom.ToString("0.00");
   }
 }

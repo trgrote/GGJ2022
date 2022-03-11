@@ -14,6 +14,6 @@ public class BabyPottyRenderer : MonoBehaviour
 
   void Update()
   {
-    _text.text = $"Potty = {_state._potty}";
+    _text.text = "Potty = " + _state._potty.ToString("0.00");
   }
 }

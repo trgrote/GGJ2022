@@ -14,6 +14,6 @@ public class DogWorkRenderer : MonoBehaviour
 
   void Update()
   {
-    _text.text = $"Work = {_state._workMeter}";
+    _text.text = "Work = " + _state._workMeter.ToString("0.00");
   }
 }

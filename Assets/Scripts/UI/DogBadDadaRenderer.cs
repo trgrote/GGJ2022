@@ -14,6 +14,6 @@ public class DogBadDadaRenderer : MonoBehaviour
 
   void Update()
   {
-    _text.text = $"BadDad = {_state._badBadMeter}";
+    _text.text = "BadDad = " + _state._badBadMeter.ToString("0.00");
   }
 }
