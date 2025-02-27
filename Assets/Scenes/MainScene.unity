@@ -1030,7 +1030,7 @@ MonoBehaviour:
     Behaviors: []
     GameObjects:
     - {fileID: 1378319003}
-  _startingState: 0
+  _startingState: 1
   _stateChangedEvent:
     m_PersistentCalls:
       m_Calls: []
