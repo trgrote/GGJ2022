@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.rho.events": {
+      "version": "https://github.com/trgrote/unity-rho-events-package.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e48e774534cd0a15e4f3054ed6b1875c299364a8"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.5",
       "depth": 0,

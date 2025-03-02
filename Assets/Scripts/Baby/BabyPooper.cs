@@ -10,6 +10,6 @@ public class BabyPooper : MonoBehaviour
     public void Poop()
     {
         Instantiate(_poopPrefab, transform.position + new Vector3(0, 2f, 0f), transform.rotation);
-        _poopEvent.Raise();
+        _poopEvent.Invoke();
     }
 }
